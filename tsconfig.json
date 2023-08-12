@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // куда производиться сборка (мы собираем с помощью webpack)
+    "outDir": "./dist/",
+    // не позволяет использовать переменные без явного указания типа
+    "noImplicitAny": true,
+    // какая модульная система
+    "module": "esnext",
+    // версия стандарта ECMAScript в которую код будет компилироваться
+    "target": "es5",
+    "jsx": "react-jsx",
+    // позволяет обрабатывать не только ts, но и js
+    "allowJs": true,
+    "moduleResolution": "node",
+    // esModuleInterop позволяет работать с пакетами, которые используют common js
+    // как с обычными пакетами с помощью import (require() module.export) = common js
+    "esModuleInterop": true,
+    // вместо
+    // import * as React from "react";
+    // можно
+    // import React from "react";
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

@@ -19,7 +19,12 @@
     // import * as React from "react";
     // можно
     // import React from "react";
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    // для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

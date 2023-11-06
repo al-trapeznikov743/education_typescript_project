@@ -5,7 +5,8 @@ module.exports = {
   },
   'extends': [
     'airbnb',
-    'airbnb-typescript'
+    'airbnb-typescript',
+    'plugin:i18next/recommended'
   ],
   'overrides': [
     {
@@ -26,7 +27,8 @@ module.exports = {
     'project': './tsconfig.json'
   },
   'plugins': [
-    'react'
+    'react',
+    'i18next'
   ],
   'rules': {
     // 0 = off, 1 = warn, 2 = error
@@ -49,6 +51,8 @@ module.exports = {
     'padded-blocks': 0,
     'jsx-quotes': 1,
     'eol-last': 0,
+
+    'i18next/no-literal-string': ['error', {markupOnly: true}],
 
     // other
     'import/no-unresolved': 0,

@@ -8,6 +8,17 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     use: ['@svgr/webpack']
   };
 
+  const babelLoader = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  };
+
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
@@ -32,7 +43,8 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
               ? '[path][name]__[local]'
               : '[hash:base64:8]'
           }
-        }
+        },
+        // sourceMap: false
       },
       // Compiles Sass to CSS
       'sass-loader'
@@ -47,9 +59,10 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
   };
 
   return [
-    typescriptLoader,
-    cssLoader,
+    fileLoader,
     svgLoader,
-    fileLoader
+    babelLoader,
+    typescriptLoader,
+    cssLoader
   ];
 };

@@ -53,7 +53,8 @@ module.exports = {
     'jsx-quotes': 1,
     'eol-last': 0,
 
-    'i18next/no-literal-string': ['error', {markupOnly: true}],
+    'i18next/no-literal-string': 0,// ['error', {markupOnly: true}],
+    'max-len': ['error', {ignoreComments: true, code: 100}],
 
     // other
     'import/no-unresolved': 0,
@@ -63,7 +64,7 @@ module.exports = {
     'quote-props': 0,
     'quotes': 0,
 
-    'react/jsx-filename-extension': [2, {'extensions': ['.js', 'jsx', 'tsx']}],
+    'react/jsx-filename-extension': [2, {extensions: ['.js', 'jsx', 'tsx']}],
     'no-unused-vars': 1
 
   },

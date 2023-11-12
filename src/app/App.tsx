@@ -1,5 +1,5 @@
 import {Suspense, useEffect} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from 'shared/lib';
 import {useTheme} from 'app/providers/ThemeProvider';
 import {AppRouter} from 'app/providers/RouteProvider';
 import {Navbar} from 'widgets/Navbar';
